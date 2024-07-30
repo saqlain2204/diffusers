@@ -17,13 +17,13 @@ from typing import List, Optional, Tuple, Union
 import torch
 from transformers import T5Tokenizer, UMT5EncoderModel
 
-from ...image_processor import VaeImageProcessor
-from ...models import AuraFlowTransformer2DModel, AutoencoderKL
-from ...models.attention_processor import AttnProcessor2_0, FusedAttnProcessor2_0, XFormersAttnProcessor
-from ...schedulers import FlowMatchEulerDiscreteScheduler
-from ...utils import logging, replace_example_docstring
-from ...utils.torch_utils import randn_tensor
-from ..pipeline_utils import DiffusionPipeline, ImagePipelineOutput
+from diffusers.image_processor import VaeImageProcessor
+from diffusers.models import AuraFlowTransformer2DModel, AutoencoderKL
+from diffusers.models.attention_processor import AttnProcessor2_0, FusedAttnProcessor2_0, XFormersAttnProcessor
+from diffusers.schedulers import FlowMatchEulerDiscreteScheduler
+from diffusers.utils import logging, replace_example_docstring
+from diffusers.utils.torch_utils import randn_tensor
+from diffusers.pipelines.pipeline_utils import DiffusionPipeline, ImagePipelineOutput
 
 
 logger = logging.get_logger(__name__)  # pylint: disable=invalid-name
