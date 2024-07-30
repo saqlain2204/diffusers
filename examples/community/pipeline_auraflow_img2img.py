@@ -17,7 +17,7 @@ from typing import List, Optional, Tuple, Union
 import torch
 from transformers import T5Tokenizer, UMT5EncoderModel
 
-from diffusers.image_processor import VaeImageProcessor
+from diffusers.image_processor import VaeImageProcessor, PipelineImageInput
 from diffusers.models import AuraFlowTransformer2DModel, AutoencoderKL
 from diffusers.models.attention_processor import AttnProcessor2_0, FusedAttnProcessor2_0, XFormersAttnProcessor
 from diffusers.schedulers import FlowMatchEulerDiscreteScheduler
@@ -385,6 +385,7 @@ class AuraFlowImg2ImgPipeline(DiffusionPipeline):
     def __call__(
         self,
         prompt: Union[str, List[str]] = None,
+        image: PipelineImageInput = None,
         negative_prompt: Union[str, List[str]] = None,
         num_inference_steps: int = 50,
         timesteps: List[int] = None,
